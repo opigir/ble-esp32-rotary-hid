@@ -20,6 +20,7 @@
 ////EASY BUTTON SETUP
 //#define BUTTON_PIN 25
 //EasyButton button(BUTTON_PIN);
+
 BleKeyboard bleKeyboard;
 
 
@@ -28,14 +29,11 @@ BleKeyboard bleKeyboard;
 
 // include a EEPROM library for memorizing last function
 #include <EEPROM.h>
-
-// From here, text "OUTPUT_B" is going to be replaced with "15".
+// From here, text "OUTPUT_B" is going to be replaced with "dt" of the encoder.
 #define  OUTPUT_B 33
-
-// "OUTPUT_A" is going to be replaced with "A0".
+// "OUTPUT_A" is going to be replaced with "clk" of the encoder.
 #define  OUTPUT_A 32
-
-// "BUTTON" is going to be replaced with "A1".
+// "BUTTON" is going to be replaced with "sw".
 #define  BUTTON 25
 
 // Declare variables aState, aLastState for checking the state of OUTPUT_A of the encoder
