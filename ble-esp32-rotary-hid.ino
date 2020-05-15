@@ -35,6 +35,8 @@ BleKeyboard bleKeyboard;
 #define  OUTPUT_A 32
 // "BUTTON" is going to be replaced with "sw".
 #define  BUTTON 25
+//LED gpio
+#define  BLELED 5
 
 // Declare variables aState, aLastState for checking the state of OUTPUT_A of the encoder
 bool aState;
@@ -86,6 +88,7 @@ void setup() {
   // when the button is not pressed, the pin reads HIGH signal because of this PULL-UP
   // when the button is pressed, pin is going to be LOW which means "pressed"
   pinMode(BUTTON, INPUT_PULLUP);
+  pinMode(BLELED, OUTPUT);
 
   // read a signal from OUTPUT_A
   // this is for initialization
@@ -104,6 +107,7 @@ void loop() {
   aState = digitalRead(OUTPUT_A);
 
   if (bleKeyboard.isConnected()) {
+    digitalWrite(BLELED, HIGH);   
     // if aLastState is not currentState, it meant there's something changed.
     if (aState != aLastState) {
 
